@@ -1,0 +1,23 @@
+{
+    "name": "jaxwilko/weird-php",
+    "authors": [
+        {
+            "name": "Jack Wilkinson",
+            "email": "me@jackwilky.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "ext-pcntl": "*",
+        "react/event-loop": "^1.4.0",
+        "laravel/serializable-closure": "^1.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Weird\\": "src/"
+        }
+    }
+}

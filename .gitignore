@@ -1,0 +1,6 @@
+.idea
+composer.lock
+vendor
+docker-compose.yaml
+.docker
+index.php
