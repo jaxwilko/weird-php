@@ -18,7 +18,6 @@ class Process
 
     protected readonly int $id;
     protected mixed $process;
-    protected array $descriptors;
     protected array $pipes = [];
     protected array $status = [];
     protected string $runtime = __DIR__ . '/runtime.php';
@@ -33,15 +32,21 @@ class Process
         array $descriptors = null
     ) {
         $this->cwd = $this->cwd ?: getcwd();
-        $this->descriptors = $descriptors ?? [
+        $descriptors = $descriptors ?? [
             ['pipe', 'r'],
             ['pipe', 'w'],
-            ['pipe', 'r'],
+            // @TODO: add pipe error output buffering support
+            ['file', '/tmp/error-output.txt', 'a']
         ];
+
+        // when installed via composer execute permissions are not preserved, to fix, we mark the runtime as user x
+        if (!is_executable($this->runtime)) {
+            chmod($this->runtime, 0744);
+        }
 
         $this->process = proc_open(
             [$this->runtime],
-            $this->descriptors,
+            $descriptors,
             $this->pipes,
             $this->cwd,
             array_merge(['PATH' => getenv('PATH')], $this->env)
