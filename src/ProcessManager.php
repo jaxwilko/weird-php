@@ -88,7 +88,7 @@ class ProcessManager
             $command = new Promise($command);
         }
 
-        $availableProcesses = array_diff(array_keys($this->processes), array_keys($this->processMap));
+        $availableProcesses = array_values(array_diff(array_keys($this->processes), array_keys($this->processMap)));
 
         if (!$availableProcesses) {
             $this->commandBuffer[] = $command;
