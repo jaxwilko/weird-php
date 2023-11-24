@@ -5,7 +5,6 @@ namespace Weird\Traits;
 use Laravel\SerializableClosure\SerializableClosure;
 use Weird\Contracts\Message;
 use Weird\Messages\DataMessage;
-use Weird\Messages\Events\Hint;
 use Weird\Messages\ExecutableMessage;
 use Weird\Messages\UnknownMessage;
 
