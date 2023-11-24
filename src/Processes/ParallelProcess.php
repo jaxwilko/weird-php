@@ -37,10 +37,10 @@ abstract class ParallelProcess implements Processable
     {
         $backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
 
-        processWrite(new Hint([
+        Hint::send([
             'from' => $backtrace,
             'message' => $data
-        ]));
+        ]);
     }
 
     public static function isChild(): bool
