@@ -5,7 +5,7 @@ This project aims to add async support to php via dispatching tasks across multi
 ## Install
 
 ```bash
-composer require jaxwilko/datamigrator
+composer require jaxwilko/weird-php
 ```
 
 ## Usage
