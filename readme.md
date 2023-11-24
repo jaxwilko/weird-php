@@ -2,6 +2,12 @@
 
 This project aims to add async support to php via dispatching tasks across multiple processes.
 
+## Requirements
+
+Weird requires:
+- PHP >= 8.2
+- Access to `pcntl` methods (`proc_open`, `proc_get_status`, `proc_terminate`)
+
 ## Install
 
 ```bash
