@@ -1,5 +1,6 @@
 {
     "name": "jaxwilko/weird-php",
+    "description": "Async Php via child processes",
     "authors": [
         {
             "name": "Jack Wilkinson",
