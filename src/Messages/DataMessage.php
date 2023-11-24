@@ -8,6 +8,6 @@ class DataMessage extends GenericMessage implements Message
 {
     public function __construct(mixed $data)
     {
-        parent::__construct(($value = @unserialize($data)) ? $value : $data);
+        parent::__construct(($data === 'N;' ? null : (($value = @unserialize($data)) ? $value : $data)));
     }
 }
