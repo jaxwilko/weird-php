@@ -3,11 +3,9 @@
 namespace Weird\Processes;
 
 use Laravel\SerializableClosure\SerializableClosure;
-use Weird\Contracts\Processable;
 use Weird\Messages\Events\Dead;
 use Weird\Messages\Events\FinishedEvent;
 use Weird\Messages\Events\ProcessException;
-
 
 class Thread extends ParallelProcess
 {
