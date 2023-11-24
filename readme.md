@@ -1,6 +1,6 @@
 # WeirdPhp
 
-This project aims to add async support to php via dispatching tasks across multiple processes,
+This project aims to add async support to php via dispatching tasks across multiple processes.
 
 ## Install
 
