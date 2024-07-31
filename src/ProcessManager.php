@@ -89,7 +89,7 @@ class ProcessManager
             $this->processes[] = new Process($class, $this->bootstrap);
         }
 
-        while (!array_product(array_map(fn (Process $process) => $process->ready(), $this->processes))) {
+        while (!array_product(array_map(fn (Process $process) => $process->ready()->running(), $this->processes))) {
             usleep(500);
         }
 
